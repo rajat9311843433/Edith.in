@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Waitlist - EDITH</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="email"], input[type="radio"] {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .accept-label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .submit-btn, .goback-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover, .goback-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Join Waitlist for EDITH</h2>
+        <form action="submit_waitlist.php" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label class="accept-label">
+                <input type="radio" name="accept_updates" value="yes" required> I accept to receive updates about EDITH.
+            </label>
+            <button type="submit" class="submit-btn" onclick="downloadImages()">Join Waitlist</button>
+        </form>
+        <a href="index.html" class="goback-btn">Go Back</a>
+        
+        <!-- Message after submitting the form -->
+        <div id="message" style="display: none; margin-top: 20px;">
+            You will now be updated about the updates and Discounts for EDITH.
+        </div>
+    </div>
+
+    <script>
+
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            document.getElementById('message').style.display = 'block'; // Show message
+            document.querySelector('form').reset(); // Reset form
+        });
+
+
+        function downloadImages() {
+
+            var imageUrls = [
+                'Top view 1.jpeg',
+                'Top view 2.jpeg',
+                'Top view 3.jpeg',
+                'Top view 4.jpeg',
+                'Detail parts.jpeg'
+            ];
+
+            imageUrls.forEach(function(url) {
+                var link = document.createElement('a');
+                link.href = url;
+                link.download = url.substring(url.lastIndexOf('/') + 1);
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html>

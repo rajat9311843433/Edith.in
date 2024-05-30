@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDITH - Pricing</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="pricing-container">
+        <img src="Top view 4.jpeg" alt="Top View" class="top-image">
+        <h2>EDITH Product Pricing</h2>
+        <p class="original-price"><del>₹61,800</del></p> <!-- Original price with strikethrough -->
+        <p class="discount">Get 3% off with prebooking!</p> <!-- Discount message -->
+        <p class="price">₹60,000</p>
+        <button onclick="prebookOrder()" class="prebook-button">Prebook</button>
+        <button onclick="goBack()" class="back-button">Go Back</button>
+    </div>
+
+    <div id="prebookModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Your order has been prebooked! The payment is Cash On Delivery</p>
+        </div>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+</html>
